@@ -1,0 +1,48 @@
+body {
+    background-image: url(http://desktop-wallpaper.net/wp-content/uploads/2017/04/Train-HD-Wallpaper.jpg);
+    color: black;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: 'Times New Roman', Times, serif;    
+} 
+#box {
+    background: rgba(225, 225,225, 0.3);
+}
+h1 {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;  
+    background-color:  rgb(143, 173, 236);
+    font-size: 18 px;
+    font-size: 60px;
+    padding: 30px;
+}
+h2 {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left; 
+    background-color: rgb(143, 173, 236);
+    font-size: 18 px;
+}
+#tHeaders {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center; 
+    background-color: rgb(143, 173, 236);
+    font-size: 20 px;
+}
+label {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left; 
+    font-size: 16 px; 
+    color: black;
+    background-color: rgb(143, 173, 236);
+    padding-left: 2%;
+    padding-right: 2%;
+}
+input {
+    background-color: rgb(143, 173, 236);
+}
+#add-train {
+    background-color: rgb(143, 173, 236);
+}

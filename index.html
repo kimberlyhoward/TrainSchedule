@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Schedule</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Train Schedule</h1>
+    <br>
+    <div class="container">
+        <div id="box">
+        <table class="table table-bordered">
+            <div class="trainSchedule">
+                <h2>Current Train Schedule</h2>
+                <div class="row">
+                    <div col-md-12>
+                        <tr class="tableheaders" id="tHeaders">
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes until Next Train</th>
+
+                        </tr>
+                    </div>
+                </div>
+
+
+            </div>
+        </table>
+
+        <div class="addTrain">
+            <h2>Add a Train to the Schedule</h2>
+            <div>
+                <label for="">Train Name</label>
+                <br>
+                <input type="text" id="train-name">
+            </div>
+            <br>
+            <div>
+                <label for="">Destination</label>
+                <br>
+                <input type="text" id="destination">
+            </div>
+            <br>
+            <div>
+                <label for="">First Train Time (HH:00 - military time)</label>
+                <br>
+                <input type="text" id="first-train-time">
+            </div>
+            <br>
+
+            <div>
+                <label for="">Frequency (min)</label>
+                <br>
+                <input type="text" id="frequency">
+            </div>
+            <br>
+            <button id="add-train">Submit</button>
+        </div>
+    </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets.js"></script>
+
+</body>
+
+</html>
