@@ -7,13 +7,14 @@ body {
 } 
 #box {
     background: rgba(225, 225,225, 0.3);
+    color: black;
+    font-size: 18 px;
 }
 h1 {
     color: black;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;  
     background-color:  rgb(143, 173, 236);
-    font-size: 18 px;
     font-size: 60px;
     padding: 30px;
 }
