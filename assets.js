@@ -1,36 +1,3 @@
-// Assume the following situations.
-
-// (TEST 1)
-// First Train of the Day is 3:00 AM
-// Assume Train comes every 3 minutes.
-// Assume the current time is 3:16 AM....
-// What time would the next train be...? (Use your brain first)
-// It would be 3:18 -- 2 minutes away
-
-// (TEST 2)
-// First Train of the Day is 3:00 AM
-// Assume Train comes every 7 minutes.
-// Assume the current time is 3:16 AM....
-// What time would the next train be...? (Use your brain first)
-// It would be 3:21 -- 5 minutes away
-
-
-// ==========================================================
-
-// Solved Mathematically
-// Test case 1:
-// 16 - 00 = 16
-// 16 % 3 = 1 (Modulus is the remainder)
-// 3 - 1 = 2 minutes away
-// 2 + 3:16 = 3:18
-
-// Solved Mathematically
-// Test case 2:
-// 16 - 00 = 16
-// 16 % 7 = 2 (Modulus is the remainder)
-// 7 - 2 = 5 minutes away
-// 5 + 3:16 = 3:21
-
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyAmdFiIU_CZ9QkZs21EnO5r7R1uXjPBPwY",
@@ -83,18 +50,22 @@ database.ref().on("child_added", function (snapshot) {
     // $("#destination").val("");
     // $("#first-train-time").val("");
     // $("#frequency").val("");
-console.log (tfrequency);
+console.log (snapshot.val());
 
   // pushed back 1 year to make sure it comes before current time
-  var convertedDate = moment(snapshot.val().firstTrain, 'hh:mm').subtract(1, 'years');
+  var convertedDate = moment(snapshot.val().firstTrainTime, 'hh:mm').subtract(1, 'years');
   var trainTime = moment(convertedDate).format('HH:mm');
+
   var currentTime = moment();
   // pushed back 1 year to make sure it comes before current time
   var firstTimeConverted = moment(trainTime,'hh:mm').subtract(1, 'years');
+  
   var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+  
   var tRemainder = diffTime % tfrequency;
   //solved
   var tMinutesTillTrain = tfrequency - tRemainder;
+
   //solved
   var nextTrain = moment().add(tMinutesTillTrain, 'minutes').format('HH:mm')
 
