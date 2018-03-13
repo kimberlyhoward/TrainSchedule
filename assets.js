@@ -76,12 +76,17 @@ $("#add-train").on("click", function () {
 });
 
 // This needs to be added to the Current Train Schedule.
-database.ref().orderByChild("dateAdded").on("child_added", function (snapshot) {
+database.ref().on("child_added", function (snapshot) {
     var sv= snapshot.val(); 
-    var tfrequency = childSnapshot.val().frequency;
+    var tfrequency = snapshot.val().frequency;
+    // $("#train-name").val("");
+    // $("#destination").val("");
+    // $("#first-train-time").val("");
+    // $("#frequency").val("");
+console.log (tfrequency);
 
   // pushed back 1 year to make sure it comes before current time
-  var convertedDate = moment(childSnapshot.val().firstTrain, 'hh:mm').subtract(1, 'years');
+  var convertedDate = moment(snapshot.val().firstTrain, 'hh:mm').subtract(1, 'years');
   var trainTime = moment(convertedDate).format('HH:mm');
   var currentTime = moment();
   // pushed back 1 year to make sure it comes before current time
@@ -94,13 +99,13 @@ database.ref().orderByChild("dateAdded").on("child_added", function (snapshot) {
   var nextTrain = moment().add(tMinutesTillTrain, 'minutes').format('HH:mm')
 
   // build a new row for information.
-    $("#trainSchedule").append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" +
-        childSnapshot.val().destination + "</td><td>" + childSnapshot.val().frequency +
+    $("#trainSchedule").append("<tr><td>" + snapshot.val().trainName + "</td><td>" +
+        snapshot.val().destination + "</td><td>" + snapshot.val().frequency +
         "</td><td>" + trainTime + "</td><td>" + tMinutesTillTrain + "</td></tr>")
 });
 
 
-Assumptions
+// Assumptions
 
 var tFrequency = 3;
 
