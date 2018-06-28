@@ -1,19 +1,23 @@
 body {
-    background-image: url(http://desktop-wallpaper.net/wp-content/uploads/2017/04/Train-HD-Wallpaper.jpg);
+    background-image: url("trian.jpg");
     color: black;
     padding-left: 10%;
     padding-right: 10%;
 } 
+img {
+    opacity: 0.4;
+    filter: alpha(opacity=50); 
+}
 #box {
-     color: red;
-}    font-size: 25px;
-
+     color: black;
+    font-size: 20px;
+}
 h1 {
     color: black;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;  
     background-color:  rgb(143, 173, 236);
-    font-size: 60px;
+    font-size: 20px;
     padding: 30px;
 }
 h2 {
